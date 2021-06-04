@@ -1,0 +1,50 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+Route::get("/", function(){
+	return redirect('/login');
+});
+
+
+Auth::routes();
+/*-- Route  define for user controller- -*/
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('user/add', [App\Http\Controllers\HomeController::class, 'Useradd'])->name('user.add');
+Route::get('user/delete/{id}', [App\Http\Controllers\HomeController::class, 'delete'])->name('user.delete');
+Route::get('user/edit/{id}', [App\Http\Controllers\HomeController::class, 'edit'])->name('user.edit');
+Route::post('user/savedata', [App\Http\Controllers\HomeController::class, 'store'])->name('user.savedata');
+Route::post('user/saveedited', [App\Http\Controllers\HomeController::class, 'saveedited'])->name('user.saveedited');
+Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
+
+Route::get('admin/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('admin.dashboard');
+
+/*-- End Route  defination for user controller- -*/
+
+/*-- Route  starts for lender controller- -*/
+
+Route::get('admin/lender', [App\Http\Controllers\LenderController::class, 'index'])->name('admin.lender');
+Route::get('lender/add', [App\Http\Controllers\LenderController::class, 'create'])->name('lender.add');
+Route::post('lender/savedata', [App\Http\Controllers\LenderController::class, 'store'])->name('lender.savedata');
+
+Route::get('lender/delete/{id}', [App\Http\Controllers\LenderController::class, 'delete'])->name('user.delete');
+Route::get('lender/edit/{id}', [App\Http\Controllers\LenderController::class, 'edit'])->name('lender.edit');
+
+Route::post('lender/saveedited', [App\Http\Controllers\LenderController::class, 'update'])->name('lender.saveedited');
+
+
+
+
+
+/*-- Ends Route  starts for lender controller- -*/
