@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \Illuminate\Http\Response;
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -45,19 +46,20 @@ class HomeController extends Controller
     public function adminHome()
     {
         $users = User::select("*")
-                        ->where("is_admin", "=", null)
+                        ->where("is_admin", "!=", 1)
                         ->get();
        
         return view('admin.adminHome',['Users'=>$users]);
     }
     public function Useradd()
     {
-       return view('admin.userform',['title'=>'Add New User']);
+       $roles=Role::get();
+       return view('admin.userform',['title'=>'Add New User','roles'=>$roles]);
     }
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-          'name' => ['required', 'string', 'max:255'],
+           'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -73,6 +75,7 @@ class HomeController extends Controller
                     'name' => $request['name'],
                     'email' => $request['email'],
                     'password' => Hash::make($request['password']),
+                    'is_admin'=>$request['is_admin'],
                 ]);
                 return redirect('admin/home')->with('success','New User Created Successfully');
         }
@@ -86,9 +89,10 @@ class HomeController extends Controller
     }
     public function edit(Request $request, $id)
     {
+        $roles=Role::get();
         $idd= base64_decode($id);
         $user=User::find($idd);
-         return view('admin.userform',['title'=>'Edit User','user'=>$user]);
+         return view('admin.userform',['title'=>'Edit User','user'=>$user,'roles'=> $roles]);
     }
     public function saveedited(Request $request)
     {
@@ -120,6 +124,7 @@ class HomeController extends Controller
                     'name' => $request['name'],
                     'email' => $request['email'],
                     'password' => Hash::make($request['password']),
+                    'is_admin'=>$request['is_admin'],
                 ]);
                 return redirect('admin/home')->with('success','User Updated Succesfully');
         }  

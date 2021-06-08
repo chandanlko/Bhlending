@@ -71,9 +71,26 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                     
-                        <a class="collapse-item" href="/admin/home">Users</a>
+                       
                         <a class="collapse-item" href="/admin/lender">Lenders</a>
                         <a class="collapse-item" href="/admin/investor">Investors</a>
+                       <!--  <a class="collapse-item" href="cards.html">Cards</a> -->
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
+                    aria-expanded="true" aria-controls="collapseThree">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Role  Management</span>
+                </a>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                    
+                        <a class="collapse-item" href="/admin/home">Users</a>
+                        <a class="collapse-item" href="/admin/role">Roles</a>
+                        
                        <!--  <a class="collapse-item" href="cards.html">Cards</a> -->
                     </div>
                 </div>

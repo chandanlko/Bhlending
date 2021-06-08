@@ -54,3 +54,15 @@ Route::get('investor/delete/{id}', [App\Http\Controllers\InvestorController::cla
 Route::get('investor/edit/{id}', [App\Http\Controllers\InvestorController::class, 'edit'])->name('investor.edit');
 
 Route::post('investor/saveedited', [App\Http\Controllers\InvestorController::class, 'update'])->name('investor.saveedited');
+
+
+/*--  starts Routing for Role controller- -*/
+
+Route::get('admin/role', [App\Http\Controllers\RoleController::class, 'index'])->name('admin.role');
+Route::get('role/add', [App\Http\Controllers\RoleController::class, 'create'])->name('role.add');
+Route::post('role/savedata', [App\Http\Controllers\RoleController::class, 'store'])->name('role.savedata');
+
+Route::get('role/delete/{id}', [App\Http\Controllers\RoleController::class, 'delete'])->name('role.delete');
+Route::get('role/edit/{id}', [App\Http\Controllers\RoleController::class, 'edit'])->name('role.edit');
+Route::post('role/saveedited', [App\Http\Controllers\RoleController::class, 'update'])->name('role.saveedited');
+
