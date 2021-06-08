@@ -43,8 +43,14 @@ Route::get('lender/edit/{id}', [App\Http\Controllers\LenderController::class, 'e
 
 Route::post('lender/saveedited', [App\Http\Controllers\LenderController::class, 'update'])->name('lender.saveedited');
 
-
-
-
-
 /*-- Ends Route  starts for lender controller- -*/
+
+/*--  starts Roting for investor controller- -*/
+Route::get('admin/investor', [App\Http\Controllers\InvestorController::class, 'index'])->name('admin.investor');
+Route::get('investor/add', [App\Http\Controllers\InvestorController::class, 'create'])->name('investor.add');
+Route::post('investor/savedata', [App\Http\Controllers\InvestorController::class, 'store'])->name('investor.savedata');
+
+Route::get('investor/delete/{id}', [App\Http\Controllers\InvestorController::class, 'delete'])->name('investor.delete');
+Route::get('investor/edit/{id}', [App\Http\Controllers\InvestorController::class, 'edit'])->name('investor.edit');
+
+Route::post('investor/saveedited', [App\Http\Controllers\InvestorController::class, 'update'])->name('investor.saveedited');

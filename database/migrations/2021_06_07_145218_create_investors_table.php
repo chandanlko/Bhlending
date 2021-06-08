@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLendersTable extends Migration
+class CreateInvestorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,22 @@ class CreateLendersTable extends Migration
      */
     public function up()
     {
-        Schema::create('lenders', function (Blueprint $table) {
+        Schema::create('investors', function (Blueprint $table) {
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
             $table->string('phone');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('business_type');
-            $table->string('business_name');
-            $table->string('revenue');
-            $table->string('credit_score');
-            $table->string('salary_from_business');
-            $table->string('other_family_income');
-            $table->string('monthly_expenses');
-            $table->string('bsnk_rupty');  
+            $table->string('address');
+            $table->string('invested_amount');
+            $table->string('offer_rate');
+            $table->string('birth_place');
+            $table->string('dob');
+            $table->string('citizenship');
+            $table->string('investment_type');
+            $table->string('investor_type');
+            $table->string('status');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -40,6 +41,6 @@ class CreateLendersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lenders');
+        Schema::dropIfExists('investors');
     }
 }

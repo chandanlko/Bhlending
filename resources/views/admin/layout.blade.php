@@ -9,6 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+
     <title>BhLending</title>
 
     <!-- Custom fonts for this template -->
@@ -22,6 +23,7 @@
 
     <!-- Custom styles for this page -->
     <link href="{{asset('admin/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+    <link href="{{asset('admin/css/datepicker.css')}}" rel="stylesheet">
 
 </head>
 
@@ -71,6 +73,7 @@
                     
                         <a class="collapse-item" href="/admin/home">Users</a>
                         <a class="collapse-item" href="/admin/lender">Lenders</a>
+                        <a class="collapse-item" href="/admin/investor">Investors</a>
                        <!--  <a class="collapse-item" href="cards.html">Cards</a> -->
                     </div>
                 </div>
@@ -214,7 +217,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
+                                        <img class="rounded-circle" src="{{asset('admin/img/undraw_profile_1.svg')}}"
                                             alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
@@ -226,7 +229,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
+                                        <img class="rounded-circle" src="{{asset('admin/img/undraw_profile_2.svg')}}"
                                             alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
@@ -238,7 +241,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
+                                        <img class="rounded-circle" src="{{asset('admin/img/undraw_profile_3.svg')}}"
                                             alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
@@ -272,7 +275,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
                                 <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                    src="{{asset('admin/img/undraw_profile.svg')}}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -376,9 +379,12 @@
 
     <!-- Page level custom scripts -->
     <script src="{{asset('admin/js/demo/datatables-demo.js')}}"></script>
+    <script src="{{asset('admin/js/datepicker.js')}}"></script>
     
 <script type="text/javascript">
     $('#table_id').dataTable();
+
+      $("#dob").datepicker();
 
  </script>  
 
