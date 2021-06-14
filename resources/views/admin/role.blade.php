@@ -3,9 +3,13 @@
 @section('admin.content')
 
                     <!-- Page Heading -->
-                    
+                     <?php $roleid=Auth::user()->is_admin; ?>
                       <div class="card">
-                      <div class="card-header"><a  href="{{url('role/add')}}" class="btn btn-info pull-right"> <b align="left">Add New Role</b> </a></div>
+                      <div class="card-header">
+                          @if($roleid==1)
+                        <a  href="{{url('role/add')}}" class="btn btn-info pull-right"> <b align="left">Add New Role</b> </a>
+                        @endif
+                      </div>
                         @if ($message = Session::get('success'))
                     <div class="alert alert-info alert-block">
                       <button type="button" class="close" data-dismiss="alert">×</button> 
@@ -38,7 +42,11 @@
                         <th scope="row">{{$key+1}}</th>
                         <td>{{$uservalues->name}}</td>
                         
-                        <td><a onclick="return confirm('Are you sure to Delete?')" href="{{url('role/delete/'.base64_encode($uservalues->id))}}"><i class="fa fa-trash"></i></a>&nbsp;<a  href="{{url('role/edit/'.base64_encode($uservalues->id))}}"> <i class="fa fa-edit"></i> </a></td>
+                        <td>
+                           @if($roleid==1)
+                          <a onclick="return confirm('Are you sure to Delete?')" href="{{url('role/delete/'.base64_encode($uservalues->id))}}"><i class="fa fa-trash"></i></a>&nbsp;<a  href="{{url('role/edit/'.base64_encode($uservalues->id))}}"> <i class="fa fa-edit"></i> </a>
+                          @endif
+                        </td>
                       </tr>
                       @endforeach
                       @endif

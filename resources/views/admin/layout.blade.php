@@ -95,7 +95,11 @@
                     </div>
                 </div>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/loan">
+                    <i class="fas fa-fw fa-credit-card"></i>
+                    <span>Loan</span></a>
+            </li>
             <!-- Nav Item - Utilities Collapse Menu -->
            
 
@@ -401,7 +405,20 @@
 <script type="text/javascript">
     $('#table_id').dataTable();
 
-      $("#dob").datepicker();
+         function set_form(id)
+      {
+        if(id==2)
+        {
+            $("#financial_institution").css('display','block');
+            $("#individual_investor").css('display','none');
+        }
+        else
+        {
+             $("#financial_institution").css('display','none');
+            $("#individual_investor").css('display','block');
+        }
+
+      }
 
  </script>  
 

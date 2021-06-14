@@ -35,7 +35,11 @@ class HomeController extends Controller
     }
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $lender=DB::table('lenders')->get()->count();
+        $investor=DB::table('investors')->get()->count();
+        $roles=DB::table('roles')->get()->count();
+        $users=DB::table('users')->get()->count();
+        return view('admin.dashboard',['countvalue'=>array('lender'=>$lender,'investor'=>$investor,'roles'=>$roles,'users'=>$users)]);
     }
   
     /**

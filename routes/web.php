@@ -66,3 +66,15 @@ Route::get('role/delete/{id}', [App\Http\Controllers\RoleController::class, 'del
 Route::get('role/edit/{id}', [App\Http\Controllers\RoleController::class, 'edit'])->name('role.edit');
 Route::post('role/saveedited', [App\Http\Controllers\RoleController::class, 'update'])->name('role.saveedited');
 
+
+
+/*--  starts Routing for lone controller- -*/
+
+Route::get('admin/loan', [App\Http\Controllers\LoanController::class, 'index'])->name('loan.role');
+Route::get('loan/add', [App\Http\Controllers\LoanController::class, 'create'])->name('loan.add');
+Route::post('loan/savedata', [App\Http\Controllers\LoanController::class, 'store'])->name('loan.savedata');
+
+Route::get('loan/delete/{id}', [App\Http\Controllers\LoanController::class, 'delete'])->name('loan.delete');
+Route::get('loan/edit/{id}', [App\Http\Controllers\LoanController::class, 'edit'])->name('loan.edit');
+Route::post('loan/saveedited', [App\Http\Controllers\LoanController::class, 'update'])->name('loan.saveedited');
+

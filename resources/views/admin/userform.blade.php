@@ -60,7 +60,7 @@
                                 <select id="is_admin"  class="form-control @error('is_admin') is-invalid @enderror" name="is_admin" required autocomplete="is_admin">
                                     @if(!empty($roles))
                                     @foreach($roles as $values)
-                                     <option value="{{$values->id}}" <?php if($user->is_admin==$values->id) echo "selected"; ?> >{{$values->name}}
+                                     <option value="{{$values->id}}" <?php if(isset($user)) { if($user->is_admin==$values->id) echo "selected"; } ?> >{{$values->name}}
                                     </option>
                                     @endforeach
                                     @endif

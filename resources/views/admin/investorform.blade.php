@@ -3,7 +3,7 @@
 @section('admin.content')
 
                  <div class="card">
-                      <div class="card-header"><a  href="{{url('admin/home')}}" class="btn btn-info pull-right"> <b align="left">Back</b> </a></div>
+                      <div class="card-header"><a  href="{{url('admin/investor')}}" class="btn btn-info pull-right"> <b align="left">Back</b> </a></div>
                         @if ($message = Session::get('success'))
                     <div class="alert alert-info alert-block">
                       <button type="button" class="close" data-dismiss="alert">×</button> 
@@ -143,7 +143,7 @@
                             <label for="dob" class="col-md-4 col-form-label text-md-right">{{ __('Date Of Birth') }}</label>
 
                             <div class="col-md-6">
-                                <input id="dob" type="text" class="form-control @error('dob') is-invalid @enderror" name="dob" value="{{ old('dob',isset($user->dob)?$user->dob:'') }}" required autocomplete="dob" autofocus>
+                                <input id="dob" type="date" class="form-control @error('dob') is-invalid @enderror" name="dob" value="{{ old('dob',isset($user->dob)?$user->dob:'') }}" required autocomplete="dob" autofocus>
 
                                 @error('dob')
                                     <span class="invalid-feedback" role="alert">

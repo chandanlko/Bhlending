@@ -7,7 +7,7 @@
                       <div class="card">
                       <div class="card-header">
                          @if($roleid==1)
-                        <a  href="{{url('investor/add')}}" class="btn btn-info pull-right"> <b align="left">Add New Investor</b> </a>
+                        <a  href="{{url('loan/add')}}" class="btn btn-info pull-right"> <b align="left">Add New Loan</b> </a>
                          @endif
                       </div>
                         @if ($message = Session::get('success'))
@@ -22,7 +22,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Investor's Lists</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Loan's Lists</h6>
                         </div>
                         <div class="card-body">
                       <table class="table table-bordered data-table" id="table_id">
@@ -30,32 +30,32 @@
 
                       <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Name /institution Name</th>
-                        <th scope="col">Phone</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">investor Type</th>
+                        <th scope="col">Loan Amount</th>
+                        <th scope="col">Duration</th>
+                        <th scope="col">Interest</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                      @if(!empty($Users))
-                      @foreach($Users as $key=>$uservalues)
+                      @if(!empty($loan))
+                      @foreach($loan as $key=>$loanvalue)
                       <tr>
                         <th scope="row">{{$key+1}}</th>
-                        <td>{{$uservalues->first_name}} {{$uservalues->last_name}} {{$uservalues->institution_name}}</td>
-                        <td>{{$uservalues->phone}}</td>
-                        <td>{{$uservalues->email}}</td>
+                        <td>{{$loanvalue->loan_amount}}</td>
+                        <td>{{$loanvalue->duration}}</td>
+                        <td>{{$loanvalue->interest}}</td>
                         <td>
-                          @if($uservalues->investor_type==1)
-                          Private Investor 
+                          @if($loanvalue->status==0)
+                           Pending
                           @else
-                          Financial Institution
+                           Progress
                           @endif
 
                           </td>
                         <td>
-                           @if($roleid==1)
-                          <a onclick="return confirm('Are you sure to Delete?')" href="{{url('investor/delete/'.base64_encode($uservalues->id))}}"><i class="fa fa-trash"></i></a>&nbsp;<a  href="{{url('investor/edit/'.base64_encode($uservalues->id))}}"> <i class="fa fa-edit"></i> </a>
+                          @if($roleid==1)
+                          <a onclick="return confirm('Are you sure to Delete?')" href="{{url('loan/delete/'.base64_encode($loanvalue->id))}}"><i class="fa fa-trash"></i></a>&nbsp;<a  href="{{url('loan/edit/'.base64_encode($loanvalue->id))}}"> <i class="fa fa-edit"></i> </a>
                           @endif
                         </td>
                       </tr>
