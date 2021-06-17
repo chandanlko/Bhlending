@@ -170,5 +170,20 @@ class InvestorController extends Controller
        Investor::where('id',$idd)->delete();
        return redirect('admin/investor')->with('success','Investor Delete Successfully');
     }
+    public function status(Request $request, $id)
+    {
+       $idd= base64_decode($id);
+       $lenderdata=Investor::where('id',$idd)->first();
+       if($lenderdata->status==0)
+       {
+            $status=1;
+       }
+       else
+       {
+           $status=0;
+       } 
+       Investor::where('id', '=', $idd)->update(array('status' => $status));
+       return redirect('admin/investor')->with('success','Status Chnaged Successfully.');
+    }
 
 }

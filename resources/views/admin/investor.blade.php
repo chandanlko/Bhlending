@@ -34,6 +34,7 @@
                         <th scope="col">Phone</th>
                         <th scope="col">Email</th>
                         <th scope="col">investor Type</th>
+                         <th scope="col">Status</th>
                         <th scope="col">Action</th>
                       </tr>
                     </thead>
@@ -53,6 +54,14 @@
                           @endif
 
                           </td>
+
+                           <td><a onclick="return confirm('Are you sure ?')" href="{{url('investor/status/'.base64_encode($uservalues->id))}}">
+
+                          @if($uservalues->status==1) 
+                          <span class="badge badge-info">Active</span> 
+                          @else 
+                          <span class="badge badge-danger">Inactive</span> 
+                        @endif</a></td>
                         <td>
                            @if($roleid==1)
                           <a onclick="return confirm('Are you sure to Delete?')" href="{{url('investor/delete/'.base64_encode($uservalues->id))}}"><i class="fa fa-trash"></i></a>&nbsp;<a  href="{{url('investor/edit/'.base64_encode($uservalues->id))}}"> <i class="fa fa-edit"></i> </a>

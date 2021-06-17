@@ -13,14 +13,13 @@ class Lender extends Model
     						'last_name',
     						'phone',
     						'email',
-    						'business_type',
-    						'business_name',
-    						'revenue',
-    						'credit_score',
-    						'salary_from_business',
-    						'other_family_income',
-    						'monthly_expenses',
-    						'bsnk_rupty',
+    						'dob',
+    						'vat',
+    						'id_lender',
+    						'address',
     						'password',
+                            'status',
+                            'image',
+                            'is_email_verified'
     					];
 }

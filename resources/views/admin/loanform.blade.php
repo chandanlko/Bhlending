@@ -25,7 +25,9 @@
                   @endif
                         @csrf
 
-                        <div class="form-group row">
+                        
+
+                         <div class="form-group row">
                             <label for="loan_amount" class="col-md-4 col-form-label text-md-right">{{ __('Loan Amount') }}</label>
 
                             <div class="col-md-6">
@@ -38,12 +40,31 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="avarage_monthly_income" class="col-md-4 col-form-label text-md-right">{{ __('Average Monthly Income') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="avarage_monthly_income" type="text" class="form-control @error('avarage_monthly_income') is-invalid @enderror" name="avarage_monthly_income" value="{{ old('avarage_monthly_income',isset($loan->avarage_monthly_income)?$loan->avarage_monthly_income:'') }}" required autocomplete="avarage_monthly_income" autofocus>
+
+                                @error('avarage_monthly_income')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="duration" class="col-md-4 col-form-label text-md-right">{{ __('Duration') }}</label>
 
                             <div class="col-md-6">
-                                <input id="duration" type="duration" class="form-control @error('duration') is-invalid @enderror" name="duration" value="{{ old('duration',isset($loan->duration)?$loan->duration:'') }}" required autocomplete="duration">
+                                <select  class="form-control @error('duration') is-invalid @enderror" name="duration">
+                                    <option value="">Tenure/Duration</option>
+                                    <option value="6 Month">6 Month</option>
+                                    <option value="1 Year">1 Year</option>
+                                    <option value="2 Year">2 Year</option>
+                                    <option value="3 Year">3 Year</option>
+                                </select>
 
                                 @error('duration')
                                     <span class="invalid-feedback" role="alert">
@@ -54,26 +75,36 @@
                         </div>
 
                          <div class="form-group row">
-                            <label for="loan_type" class="col-md-4 col-form-label text-md-right">{{ __('Loan Type') }}</label>
+                            <label for="business_type" class="col-md-4 col-form-label text-md-right">{{ __('Business Type') }}</label>
 
                             <div class="col-md-6">
-                                <input id="loan_type" type="text" class="form-control @error('loan_type') is-invalid @enderror" name="loan_type" value="{{ old('loan_type',isset($loan->loan_type)?$loan->loan_type:'') }}" required autocomplete="loan_type" autofocus>
+                                    <select class="form-control @error('business_type') is-invalid @enderror"  name="business_type">
+                                        <option value="">Business Type</option>
+                                        <option value="Partnership">Partnership</option>
+                                        <option value="Sole proprietorship"> Sole proprietorship</option>
+                                        <option value="Corporation - C corp">Corporation - C corp</option>
+                                        <option value="Corporation - B corp">Corporation - B corp</option>
+                                        <option value="Corporation - S corp">Corporation - S corp</option>
+                                        <option value="Flexibility">Flexibility</option>
+                                    </select>
 
-                                @error('loan_type')
+                             
+
+                                @error('business_type')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
-                                <input type="hidden" name="userid" value="@if(isset($loan->id)){{$loan->id}} @endif">
+                        <input type="hidden" name="userid" value="@if(isset($loan->id)){{$loan->id}} @endif">
                         <div class="form-group row">
-                            <label for="interest" class="col-md-4 col-form-label text-md-right">{{ __('Interest') }}</label>
+                            <label for="credit_score" class="col-md-4 col-form-label text-md-right">{{ __('Credit Score') }}</label>
 
                             <div class="col-md-6">
-                                <input id="interest" type="text" class="form-control @error('interest') is-invalid @enderror" name="interest" value="{{ old('interest',isset($loan->interest)?$loan->interest:'') }}" required autocomplete="interest">
+                                <input id="credit_score" type="text" class="form-control @error('credit_score') is-invalid @enderror" name="credit_score" value="{{ old('credit_score',isset($loan->credit_score)?$loan->credit_score:'') }}" required autocomplete="credit_score">
 
-                                @error('interest')
+                                @error('credit_score')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -95,6 +126,20 @@
                                 </select>
                                
                                 @error('lenderid')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                         <div class="form-group row">
+                            <label for="request_reason" class="col-md-4 col-form-label text-md-right">{{ __('Reason of the Request') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="request_reason" type="text" class="form-control @error('request_reason') is-invalid @enderror" name="request_reason" value="{{ old('request_reason',isset($loan->request_reason)?$loan->request_reason:'') }}" required autocomplete="request_reason">
+
+                                @error('request_reason')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

@@ -11,9 +11,11 @@ class Loan extends Model
     protected $fillable=[
     	'loan_amount',
     	'duration',
-    	'loan_type',
-    	'interest',
+    	'avarage_monthly_income',
+    	'business_type',
     	'status',
-    	'lenderid'
+    	'lenderid',
+    	'credit_score',
+    	'request_reason'
     ];
 }

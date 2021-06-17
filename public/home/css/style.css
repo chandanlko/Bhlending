@@ -1,0 +1,660 @@
+@import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@100;300;400;500;600;700&display=swap");
+body {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Sarabun';
+}
+
+a {
+  text-decoration: none !important;
+}
+
+ul.top-social-list {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+ul.top-social-list li {
+  display: inline-block;
+  margin: 0px 2px;
+}
+
+.top-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.top-address p {
+  margin: 0px;
+}
+
+.main-top-header {
+  background: #004388;
+  padding: 8px;
+}
+
+i.fa.fa-eye.eyeicon.fa-eye-slash {
+  color: #004388;
+}
+
+a.forgot-link {
+  color: #004388;
+  font-family: 'Sarabun';
+}
+
+.top-address p {
+  margin: 0px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+span.top-icon {
+  margin-right: 5px;
+}
+
+ul.top-social-list li {
+  color: #fff;
+  font-family: 'Sarabun';
+  font-size: 14px;
+}
+
+ul.top-social-list li a {
+  padding: 5px;
+  color: #fff;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+  text-decoration: none !important;
+}
+
+ul.top-social-list li a:hover {
+  color: #eaeaea;
+}
+
+.main-bottom-header nav.navbar li.nav-item a.nav-link {
+  color: #000 !important;
+  font-family: 'Sarabun';
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+img.main-logo {
+  width: 150px;
+}
+
+.main-bottom-header nav.navbar li.nav-item {
+  margin: 0px 6px;
+}
+
+.login-control-form input.form-control {
+  width: 100%;
+  padding: 15px 25px !important;
+  font-family: 'Sarabun';
+}
+
+.login-control-form input.form-control:focus {
+  outline: none;
+  border: 0px;
+}
+
+.login-control-form .input-icon {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.login-control-form .input-icon:nth-child(2) {
+  margin-bottom: 10px;
+}
+
+button#btnToggle {
+  position: absolute;
+  background: transparent;
+  border: 0px;
+  outline: none;
+  color: #656565;
+  font-size: 14px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 10px;
+}
+
+.login-banner {
+  width: 100%;
+  text-align: center;
+}
+
+.login-banner img.loan-img-item {
+  width: 85%;
+}
+
+input.login-btn {
+  width: 100%;
+  padding: 14px;
+  background: #004388;
+  border: 0px;
+  color: #fff;
+  font-size: 20px;
+  font-family: 'Sarabun';
+  text-transform: capitalize;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.login-row {
+  margin-top: 25px;
+}
+
+.flex-row-remember.form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.remember_me-inputs label {
+  font-size: 14px;
+  font-family: 'Sarabun';
+  margin-left: 5px;
+}
+
+.remember_me-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+input.remember-me {
+  width: 15px;
+  height: 15px;
+}
+
+h1.welcome-loan {
+  font-size: 28px;
+  text-align: center;
+  font-weight: 800;
+  font-family: 'Sarabun';
+}
+
+h1.welcome-loan span.uppercase-font {
+  text-transform: uppercase;
+  color: #004388;
+}
+
+.login-control-form {
+  margin-top: 32px;
+}
+
+section.login-screen {
+  padding: 60px 0px;
+}
+
+section.login-screen .row {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer.main-footer {
+  background: #1A1A1A;
+}
+
+img.footer-logo {
+  width: 15%;
+}
+
+.footer-box h5.footer-title {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'Sarabun';
+  font-weight: 800;
+  font-size: 22px;
+}
+
+ul.footer-list {
+  margin-top: 30px;
+}
+
+ul.footer-list li p {
+  color: #fff;
+  font-size: 14px;
+}
+
+.footer-icon i {
+  color: #2e83da;
+  font-size: 18px;
+}
+
+h6.footer-link-title {
+  color: #FAFBFC;
+  margin: 0px;
+}
+
+.footer-info a.footer-link {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Sarabun';
+}
+
+.footer-menu-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.footer-icon {
+  margin-right: 15px;
+}
+
+ul.footer-list {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 20px;
+}
+
+ul.footer-list li a.footer-link-list {
+  color: #FAFBFC;
+  text-decoration: none;
+}
+
+ul.footer-list li a.footer-link-list {
+  color: #FAFBFC;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+ul.footer-list li {
+  margin-bottom: 12px;
+}
+
+ul.footer-social-icons {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+ul.footer-social-icons li {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 0px 5px;
+  width: 30px;
+  height: 30px;
+  background: #2e83da;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+}
+
+p.follow-us {
+  font-size: 16px !important;
+  color: #FAFBFC;
+  font-family: 'Sarabun';
+}
+
+p.footer-tagline {
+  font-size: 16px !important;
+}
+
+ul.footer-social-icons li a {
+  color: #fff;
+}
+
+.footer-area::after {
+  background: #0000008a;
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+}
+
+.footer-area {
+  background: #1A1A1A url(../img/world-map.png) no-repeat;
+  padding: 30px 0px 50px;
+  position: relative;
+  background-size: 45%;
+  background-position: top;
+}
+
+.footer-area .container {
+  position: relative;
+  z-index: 5;
+}
+
+.copyright {
+  background: #004388;
+  padding: 10px;
+}
+
+.copyright p.copy-p {
+  margin: 0px;
+  color: #fff;
+  font-family: 'Sarabun';
+  text-align: center;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 999999;
+  top: 0;
+  right: 0;
+  background-color: #1a4273;
+  overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 15px 8px 8px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #e0e0e0;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.navbar-dark .navbar-toggler {
+  color: #000000cf !important;
+  border-color: #00000096 !important;
+}
+
+div#collapsibleNavbar {
+  display: block;
+}
+
+div#mySidenav {
+  display: none;
+}
+
+#regForm {
+  background-color: #ffffff;
+  font-family: 'Sarabun';
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
+  margin: 0px auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: 'Sarabun';
+  border: 1px solid #aaaaaa;
+}
+
+input.invalid {
+  background-color: #ffdddd;
+}
+
+select.invalid {
+  background-color: #ffdddd;
+}
+
+.tab {
+  display: none;
+}
+
+button {
+  background-color: #004388;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: 'Sarabun';
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: auto;
+  width: 100%;
+  margin: 0 8px;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 1;
+  text-align: center;
+  position: relative;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish .line-valid span.steps-digit {
+  background-color: #004388;
+  color: #fff;
+}
+
+.step.finish .line-valid p.steps-name {
+  color: #004388;
+}
+
+.step.finish .line-valid::after {
+  background: #004388;
+}
+
+.register-tab-container .form-group input {
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  border: 1px solid #464646;
+  border-radius: 7px;
+  width: 100%;
+}
+
+.register-tab-container .form-group select {
+  margin-bottom: 20px;
+  padding: 15px 20px;
+  border: 1px solid #464646;
+  border-radius: 7px;
+  width: 100%;
+}
+
+.button-registers {
+  width: 100%;
+  padding: 10px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+button#nextBtn {
+  width: 48%;
+  float: right;
+  margin-left: 15px;
+}
+
+button#prevBtn {
+  width: 48%;
+  float: left;
+  margin-right: 15px;
+  border-radius: 7px;
+}
+
+#prevBtn {
+  background-color: #D2D2D2;
+  color: #000;
+  font-family: 'Sarabun';
+  font-size: 18px;
+}
+
+button#nextBtn {
+  width: 48%;
+  float: right;
+  margin-left: 15px;
+  font-size: 18px;
+  border-radius: 7px;
+}
+
+.tab-shows-steps {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.step .line-valid {
+  width: 100%;
+  position: relative;
+}
+
+.step .line-valid span.steps-digit {
+  width: 80px;
+  height: 80px;
+  background: #F3EFFF;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 25px;
+  margin: 0px auto;
+  position: relative;
+  z-index: 2;
+}
+
+.step .line-valid::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 10px;
+  background: #F3EFFF;
+  top: 41%;
+  left: 0px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 1;
+}
+
+p.steps-name {
+  font-family: 'Sarabun';
+  font-size: 18px;
+}
+
+section.register-screen {
+  padding: 10px 0px;
+}
+/*# sourceMappingURL=style.css.map */
+
+
+/*------------------Get Started----------------*/
+
+.btn{
+  border-radius: 5px;
+  padding: 12px 45px;
+  font-size: 20px;
+}
+.blue-btn{
+background: #004388;
+color: #fff;
+border-radius: 5px;
+}
+
+.outer-line-btn{
+  background: transparent;
+  border: #5695E4 solid 1px;
+  color:#5695E4;
+  border-radius: 5px;
+}
+.margin-auto{
+  margin:0 auto;
+}
+
+#collapsibleNavbar > ul > li.nav-item.textWhite a{
+color:#fff !important;
+font-size: 14px; 
+padding:10px 20px;
+font-weight: 400;
+}
+
+#collapsibleNavbar > ul > li.nav-item.textBlue a{
+  color: #5695E4 !important;
+  font-size: 14px; 
+padding:10px 20px;
+font-weight: 400;
+}
+
+.orText{
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.colorBlue{
+  color: #004388;
+}
+
+.fontWeight600{
+  font-weight: 600;
+}
+
+.navbar-collapse{
+  flex-direction: row-reverse;
+}

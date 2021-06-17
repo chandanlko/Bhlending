@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Home\FrontController;
+use App\Http\Controllers\Home\ApplicantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +44,7 @@ Route::get('lender/delete/{id}', [App\Http\Controllers\LenderController::class, 
 Route::get('lender/edit/{id}', [App\Http\Controllers\LenderController::class, 'edit'])->name('lender.edit');
 
 Route::post('lender/saveedited', [App\Http\Controllers\LenderController::class, 'update'])->name('lender.saveedited');
+Route::get('lender/status/{id}', [App\Http\Controllers\LenderController::class, 'status'])->name('lender.status');
 
 /*-- Ends Route  starts for lender controller- -*/
 
@@ -54,6 +57,7 @@ Route::get('investor/delete/{id}', [App\Http\Controllers\InvestorController::cla
 Route::get('investor/edit/{id}', [App\Http\Controllers\InvestorController::class, 'edit'])->name('investor.edit');
 
 Route::post('investor/saveedited', [App\Http\Controllers\InvestorController::class, 'update'])->name('investor.saveedited');
+Route::get('investor/status/{id}', [App\Http\Controllers\InvestorController::class, 'status'])->name('investor.status');
 
 
 /*--  starts Routing for Role controller- -*/
@@ -77,4 +81,26 @@ Route::post('loan/savedata', [App\Http\Controllers\LoanController::class, 'store
 Route::get('loan/delete/{id}', [App\Http\Controllers\LoanController::class, 'delete'])->name('loan.delete');
 Route::get('loan/edit/{id}', [App\Http\Controllers\LoanController::class, 'edit'])->name('loan.edit');
 Route::post('loan/saveedited', [App\Http\Controllers\LoanController::class, 'update'])->name('loan.saveedited');
+
+Route::get('lender/sendbasicemail', [App\Http\Controllers\LenderController::class, 'basic_email'])->name('loan.sendbasicemail');
+
+
+
+
+/*---starting routing for home pages */
+
+Route::get('/front',[FrontController::class,'index'])->name('front');
+Route::get('/register_applicant',[FrontController::class,'register_applicant'])->name('register_applicant');
+Route::get('/login_applicant',[FrontController::class,'login_applicant'])->name('login_applicant');
+Route::post('/registration_applicant',[FrontController::class,'registration_applicant'])->name('registration_applicant');
+
+Route::post('/loginapplicant',[FrontController::class,'loginapplicant'])->name('loginapplicant');
+Route::get('/forget_password',[FrontController::class,'forget_password'])->name('forget_password');
+
+Route::get('/applicant_dashboard',[ApplicantController::class,'index'])->name('applicant_dashboard');
+Route::get('/applicantlogout',[FrontController::class,'applicantlogout'])->name('applicantlogout');
+
+
+
+
 

@@ -17,9 +17,11 @@ class CreateLoansTable extends Migration
             $table->id();
             $table->string('lenderid');
             $table->string('loan_amount');
-            $table->string('duration');
-            $table->string('loan_type');
-            $table->string('interest');
+            $table->string('avarage_monthly_income')->nullable();
+            $table->string('duration')->nullable();
+            $table->string('business_type')->nullable();
+            $table->string('credit_score')->nullable();
+            $table->string('request_reason')->nullable();
             $table->string('status');
             $table->timestamps();
         });

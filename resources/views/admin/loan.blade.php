@@ -30,9 +30,10 @@
 
                       <tr>
                         <th scope="col">#</th>
+                        <th scope="col">Lender Name</th>
                         <th scope="col">Loan Amount</th>
                         <th scope="col">Duration</th>
-                        <th scope="col">Interest</th>
+                        <th scope="col">Credit Score</th>
                         <th scope="col">Status</th>
                         <th scope="col">Action</th>
                       </tr>
@@ -41,10 +42,12 @@
                       @if(!empty($loan))
                       @foreach($loan as $key=>$loanvalue)
                       <tr>
+
                         <th scope="row">{{$key+1}}</th>
+                        <td>  {{getlenderdata($loanvalue->lenderid)->first_name}} <br>{{getlenderdata($loanvalue->lenderid)->email}}</td>
                         <td>{{$loanvalue->loan_amount}}</td>
                         <td>{{$loanvalue->duration}}</td>
-                        <td>{{$loanvalue->interest}}</td>
+                        <td>{{$loanvalue->credit_score}}</td>
                         <td>
                           @if($loanvalue->status==0)
                            Pending

@@ -80,12 +80,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="business_type" class="col-md-4 col-form-label text-md-right">{{ __(' Business Type') }}</label>
+                            <label for="dob" class="col-md-4 col-form-label text-md-right">{{ __('Date of Birth') }}</label>
 
                             <div class="col-md-6">
-                                <input id="business_type" type="text" class="form-control @error('business_type') is-invalid @enderror" name="business_type" value="{{ old('business_type',isset($user->business_type)?$user->business_type:'') }}" required autocomplete="business_type" autofocus>
+                                <input id="dob" type="date" class="form-control @error('dob') is-invalid @enderror" name="dob" value="{{ old('dob',isset($user->dob)?$user->dob:'') }}" required autocomplete="dob" autofocus>
 
-                                @error('business_type')
+                                @error('dob')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -95,12 +95,12 @@
 
 
                     <div class="form-group row">
-                            <label for="business_name" class="col-md-4 col-form-label text-md-right">{{ __(' Business Name') }}</label>
+                            <label for="vat" class="col-md-4 col-form-label text-md-right">{{ __('VAT') }}</label>
 
                             <div class="col-md-6">
-                                <input id="business_name" type="text" class="form-control @error('business_name') is-invalid @enderror" name="business_name" value="{{ old('business_name',isset($user->business_name)?$user->business_name:'') }}" required autocomplete="business_name" autofocus>
+                                <input id="vat" type="text" class="form-control @error('vat') is-invalid @enderror" name="vat" value="{{ old('vat',isset($user->vat)?$user->vat:'') }}" required autocomplete="vat" autofocus>
 
-                                @error('business_name')
+                                @error('vat')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -110,91 +110,37 @@
 
 
                           <div class="form-group row">
-                            <label for="revenue" class="col-md-4 col-form-label text-md-right">{{ __(' Revenue') }}</label>
+                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __(' Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="revenue" type="text" class="form-control @error('revenue') is-invalid @enderror" name="revenue" value="{{ old('revenue',isset($user->revenue)?$user->revenue:'') }}" required autocomplete="revenue" autofocus>
-
-                                @error('revenue')
+                                <textarea id="address" type="text" class="form-control @error('revenue') is-invalid @enderror" name="address" required autocomplete="address" autofocus >{{ old('address',isset($user->address)?$user->address:'')}}</textarea>
+                                
+                                @error('address')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                         </div>
 
-
-                        <div class="form-group row">
-                            <label for="credit_score" class="col-md-4 col-form-label text-md-right">{{ __(' Credit Score') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="credit_score" type="text" class="form-control @error('credit_score') is-invalid @enderror" name="credit_score" value="{{ old('credit_score',isset($user->credit_score)?$user->credit_score:'') }}" required autocomplete="credit_score" autofocus>
-
-                                @error('credit_score')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
 
                          <div class="form-group row">
-                            <label for="salary_from_business" class="col-md-4 col-form-label text-md-right">{{ __(' Salary From Business') }}</label>
+                            <label for="id_lender" class="col-md-4 col-form-label text-md-right">{{ __(' ID ') }}</label>
 
                             <div class="col-md-6">
-                                <input id="salary_from_business" type="text" class="form-control @error('salary_from_business') is-invalid @enderror" name="salary_from_business" value="{{ old('salary_from_business',isset($user->salary_from_business)?$user->salary_from_business:'') }}" required autocomplete="salary_from_business" autofocus>
+                                <input id="id_lender" type="text" class="form-control @error('id_lender') is-invalid @enderror" name="id_lender" value="{{ old('address',isset($user->id_lender)?$user->id_lender:'') }}" required autocomplete="id_lender" autofocus>
 
-                                @error('salary_from_business')
+                                @error('id_lender')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="other_family_income" class="col-md-4 col-form-label text-md-right">{{ __(' Family Income') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="other_family_income" type="text" class="form-control @error('other_family_income') is-invalid @enderror" name="other_family_income" value="{{ old('other_family_income',isset($user->other_family_income)?$user->other_family_income:'') }}" required autocomplete="other_family_income" autofocus>
-
-                                @error('other_family_income')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                         </div>
+               
 
 
-                        <div class="form-group row">
-                            <label for="monthly_expenses" class="col-md-4 col-form-label text-md-right">{{ __(' Monthly Expenses') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="monthly_expenses" type="text" class="form-control @error('monthly_expenses') is-invalid @enderror" name="monthly_expenses" value="{{ old('monthly_expenses',isset($user->monthly_expenses)?$user->monthly_expenses:'') }}" required autocomplete="monthly_expenses" autofocus>
-
-                                @error('monthly_expenses')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                         <div class="form-group row">
-                            <label for="bsnk_rupty" class="col-md-4 col-form-label text-md-right">{{ __(' Bank Ruptcy') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="bsnk_rupty" type="text" class="form-control @error('bsnk_rupty') is-invalid @enderror" name="bsnk_rupty" value="{{ old('bsnk_rupty',isset($user->bsnk_rupty)?$user->bsnk_rupty:'') }}" required autocomplete="bsnk_rupty" autofocus>
-
-                                @error('bsnk_rupty')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
+                        
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 

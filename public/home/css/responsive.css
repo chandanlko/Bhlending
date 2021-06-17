@@ -1,0 +1,86 @@
+@media (max-width: 768px) {
+  .main-top-header {
+    display: none;
+  }
+  .login-banner img.loan-img-item {
+    width: 100%;
+  }
+  .login-banner {
+    margin-bottom: 40px;
+  }
+  h1.welcome-loan {
+    font-size: 24px;
+  }
+  .login-control-form input.form-control {
+    width: 100%;
+    padding: 13px 25px !important;
+    font-family: 'Sarabun';
+  }
+  img.footer-logo {
+    width: 35%;
+  }
+  .footer-box h5.footer-title {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .footer-box {
+    margin: 20px 0px;
+  }
+  div#collapsibleNavbar {
+    display: none;
+  }
+  div#mySidenav {
+    display: block;
+  }
+  #regForm {
+    background-color: #ffffff;
+    font-family: 'Sarabun';
+    padding: 40px 0px;
+    width: 100%;
+    min-width: 100%;
+    margin: 0px auto;
+  }
+  .step .line-valid span.steps-digit {
+    width: 50px;
+    height: 50px;
+    background: #F3EFFF;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 22px;
+    margin: 0px auto;
+    position: relative;
+    z-index: 2;
+  }
+  p.steps-name {
+    font-family: 'Sarabun';
+    font-size: 16px;
+  }
+  .register-tab-container .form-group input {
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    border: 1px solid #464646;
+    border-radius: 7px;
+    width: 100%;
+  }
+  .register-tab-container .container-fluid {
+    padding: 0px;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */

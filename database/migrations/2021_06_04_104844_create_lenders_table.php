@@ -20,14 +20,14 @@ class CreateLendersTable extends Migration
             $table->string('phone');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('business_type');
-            $table->string('business_name');
-            $table->string('revenue');
-            $table->string('credit_score');
-            $table->string('salary_from_business');
-            $table->string('other_family_income');
-            $table->string('monthly_expenses');
-            $table->string('bsnk_rupty');  
+            $table->string('dob')->nullable();
+            $table->string('address')->nullable();
+            $table->string('vat')->nullable();
+            $table->string('id_lender');
+            $table->string('status')->nullable();
+            $table->string('is_email_verified')->nullable();
+            $table->string('image')->nullable();
+            
             $table->rememberToken();
             $table->timestamps();
         });

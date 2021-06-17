@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 
 
+
+
 class LenderController extends Controller
 {
     /**
@@ -52,13 +54,9 @@ class LenderController extends Controller
             'last_name' => ['required', 'string', 'max:255'],
             'phone' =>   ['required', 'string', 'max:255'],
             'email' =>   ['required', 'string', 'email', 'max:255', 'unique:lenders'],
-            'business_name' => ['required', 'string', 'max:255'],
-            'business_type' => ['required', 'string', 'max:255'],
-            'revenue' => ['required', 'string', 'max:255'],
-            'credit_score' => ['required', 'string', 'max:255'],
-            'salary_from_business' => ['required', 'string', 'max:255'],
-            'other_family_income' => ['required', 'string', 'max:255'],
-            'bsnk_rupty' => ['required', 'string', 'max:255'],
+            'dob' => ['required', 'string', 'max:255'],
+            'vat' => ['required', 'string', 'max:255'],
+            'id_lender' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
         if ($validator->fails()) {
@@ -74,37 +72,20 @@ class LenderController extends Controller
                     'last_name' => $request['last_name'],
                     'phone' => $request['phone'],
                     'email' => $request['email'],
-                    'business_type' => $request['business_type'],
-                    'business_name' => $request['business_name'],
-                    'revenue' => $request['revenue'],
-                    'credit_score' => $request['credit_score'],
-                    'salary_from_business' => $request['salary_from_business'],
-                    'other_family_income' => $request['other_family_income'],
-                    'monthly_expenses' => $request['monthly_expenses'],
-                    'bsnk_rupty' => $request['bsnk_rupty'],
+                    'dob' => $request['dob'],
+                    'address' => $request['address'],
+                    'vat' => $request['vat'],
+                    'id_lender' => $request['id_lender'],
                     'password' => Hash::make($request['password']),
+                    'status'=>0 
                 ]);
-                return redirect('admin/lender')->with('success','New Lender Created Successfully');
+
+       
+        return redirect('admin/lender')->with('success','New Lender Created Successfully');
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Lender  $lender
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Lender $lender)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Lender  $lender
-     * @return \Illuminate\Http\Response
-     */
+    
         ### particular lender can be manipulat/ the record
          public function edit(Request $request, $id)
             {
@@ -135,14 +116,10 @@ class LenderController extends Controller
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
             'phone' =>   ['required', 'string', 'max:255'],
-            'email' =>   $emailvalid,
-            'business_name' => ['required', 'string', 'max:255'],
-            'business_type' => ['required', 'string', 'max:255'],
-            'revenue' => ['required', 'string', 'max:255'],
-            'credit_score' => ['required', 'string', 'max:255'],
-            'salary_from_business' => ['required', 'string', 'max:255'],
-            'other_family_income' => ['required', 'string', 'max:255'],
-            'bsnk_rupty' => ['required', 'string', 'max:255'],
+            'email' =>  $emailvalid,
+            'dob' => ['required', 'string', 'max:255'],
+            'vat' => ['required', 'string', 'max:255'],
+            'id_lender' => ['required', 'string', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
         if ($validator->fails()) {
@@ -154,35 +131,55 @@ class LenderController extends Controller
         {
                     Lender::where('id',$request['userid'])
                     ->update([
-                            'first_name' => $request['first_name'],
-                            'last_name' => $request['last_name'],
-                            'phone' => $request['phone'],
-                            'email' => $request['email'],
-                            'business_type' => $request['business_type'],
-                            'business_name' => $request['business_name'],
-                            'revenue' => $request['revenue'],
-                            'credit_score' => $request['credit_score'],
-                            'salary_from_business' => $request['salary_from_business'],
-                            'other_family_income' => $request['other_family_income'],
-                            'monthly_expenses' => $request['monthly_expenses'],
-                            'bsnk_rupty' => $request['bsnk_rupty'],
-                            'password' => Hash::make($request['password']),
-                 ]);
+                    'first_name' => $request['first_name'],
+                    'last_name' => $request['last_name'],
+                    'phone' => $request['phone'],
+                    'email' => $request['email'],
+                    'dob' => $request['dob'],
+                    'address' => $request['address'],
+                    'vat' => $request['vat'],
+                    'id_lender' => $request['id_lender'],
+                    'password' => Hash::make($request['password']),
+                    'status'=>0 
+                ]);
            return redirect('admin/lender')->with('success','Lender Record Updated Succesffully');
         } 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Lender  $lender
-     * @return \Illuminate\Http\Response
-     */
+   
     public function delete(Request $request, $id)
     {
        $idd= base64_decode($id);
        Lender::where('id',$idd)->delete();
        return redirect('admin/lender')->with('success','Lender Delete Successfully');
     }
+ ### here  is code starting for changing ths ststus
+    public function status(Request $request, $id)
+    {
+       $idd= base64_decode($id);
+       $lenderdata=Lender::where('id',$idd)->first();
+       if($lenderdata->status=='0')
+       {
+            $status=1;
+       }
+       else
+       {
+         $status=0;
+       }
+       Lender::where('id',$idd)
+                    ->update(['status'=>$status]);
+      return redirect('admin/lender')->with('success','Record Updated Succesffully');
+    }
+
+    public function basic_email() {
+      $data = array('name'=>"Virat Gandhi");
+    
+    $value=  \Mail::send(['text'=>'emails.lender_reg'], $data, function($message) {
+         $message->to('std.chandan@gmail.com', 'Tutorials Point')->subject
+            ('Laravel Basic Testing Mail');
+         $message->from('info@nirvanaflavours.com','Virat Gandhi');
+      });
+    print_r($value);
+   }
 
 }

@@ -7,6 +7,7 @@ use App\Models\Lender;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
+
 class LoanController extends Controller
 {/**
      * Display a listing of the resource.
@@ -47,11 +48,13 @@ class LoanController extends Controller
     public function store(Request $request)
     {
              $validator = Validator::make($request->all(), [
-            'lenderid' => ['required', 'string', 'max:255'],
+             'lenderid' => ['required', 'string', 'max:255'],
             'loan_amount' => ['required', 'string', 'max:255'],
             'duration' =>   ['required', 'string', 'max:255'],
-            'loan_type' =>   ['required', 'string'],
-            'interest' => ['required', 'string', 'max:255'],
+            'avarage_monthly_income' => ['required', 'string', 'max:255'],
+            'business_type' => ['required', 'string', 'max:255'],
+            'credit_score' => ['required', 'string', 'max:255'],
+            'request_reason' => ['required', 'string', 'max:255'],
             ]);
         if ($validator->fails()) {
             return redirect('loan/add')
@@ -65,10 +68,12 @@ class LoanController extends Controller
                     'lenderid' => $request['lenderid'],
                     'loan_amount' => $request['loan_amount'],
                     'duration' => $request['duration'],
-                    'interest' => $request['interest'],
-                    'status' =>0,
-                    'loan_type' => $request['loan_type']
-                    
+                    'avarage_monthly_income' => $request['avarage_monthly_income'],
+                    'business_type' => $request['business_type'],
+                    'credit_score' => $request['credit_score'],
+                    'request_reason' => $request['request_reason'],
+                    'status' =>0
+                                     
                 ]);
                 return redirect('admin/loan')->with('success','New Loan Created Successfully');
         }
@@ -97,8 +102,10 @@ class LoanController extends Controller
             'lenderid' => ['required', 'string', 'max:255'],
             'loan_amount' => ['required', 'string', 'max:255'],
             'duration' =>   ['required', 'string', 'max:255'],
-            'loan_type' =>   ['required', 'string'],
-            'interest' => ['required', 'string', 'max:255'],
+            'avarage_monthly_income' => ['required', 'string', 'max:255'],
+            'business_type' => ['required', 'string', 'max:255'],
+            'credit_score' => ['required', 'string', 'max:255'],
+            'request_reason' => ['required', 'string', 'max:255'],
             ]);
         if ($validator->fails()) {
             return redirect('loan/add')
@@ -112,10 +119,12 @@ class LoanController extends Controller
                     'lenderid' => $request['lenderid'],
                     'loan_amount' => $request['loan_amount'],
                     'duration' => $request['duration'],
-                    'interest' => $request['interest'],
-                    'status' =>0,
-                   'loan_type' => $request['loan_type']
-                    
+                    'avarage_monthly_income' => $request['avarage_monthly_income'],
+                    'business_type' => $request['business_type'],
+                    'credit_score' => $request['credit_score'],
+                    'request_reason' => $request['request_reason'],
+                    'status' =>0
+                                     
                 ]);
         }
            return redirect('admin/loan')->with('success','Loan Record Updated Succesffully');
